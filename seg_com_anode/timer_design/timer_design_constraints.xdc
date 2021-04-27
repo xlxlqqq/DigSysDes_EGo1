@@ -1,3 +1,5 @@
+set_property BITSTREAM.CONFIG.SPI_BUSWIDTH 4 [current_design]
+
 set_property IOSTANDARD LVCMOS33 [get_ports {seg_cs_1[3]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {seg_cs_1[2]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {seg_cs_1[1]}]
