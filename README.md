@@ -1,5 +1,9 @@
 # DigSysDes
 Some code made for digital system design lessons and homework.
+Artix-7 35csg324 -1
+Company: Tianjin University
+Engineer: xlxlqqq
+
 1. count from 0 to 9999. 
 2. timer designed to count seconds and display the time in common anode tube. 
 
