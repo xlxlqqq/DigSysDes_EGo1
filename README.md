@@ -13,3 +13,6 @@ The folder seg_com_anode contains the code which is made for COMMON ANODE TUBE. 
 
 2021.4.21
 Add seg_com_anode code which designes a timer with xilinx.
+
+2021.4.28
+Add Float_Led project with reset function.
