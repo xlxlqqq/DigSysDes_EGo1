@@ -19,6 +19,14 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
+/*
+clk：系统时钟，100MHz
+rst：复位按键
+data：每4位对应一个数码管，里面包含了所有要显示的数字
+dis_data:包含了每一位要显示的数字，但是没有进行BCD转换
+seg_data：转换成的段码
+seg_cs：位码
+*/
 
 module DIgi_tube(
    input clk,
@@ -28,8 +36,10 @@ module DIgi_tube(
    output reg [3:0]seg_cs
     );
    
- reg clk_500HZ;
+ reg clk_500HZ;      //一个新的脉冲信号，频率为50Hz
  integer clk_cnt;
+   
+//产生一个50Hz的新脉冲信号
  always @(posedge clk or posedge rst)
  begin
     if(rst)
@@ -51,12 +61,15 @@ module DIgi_tube(
     end
  end
  
+////快速更新片选信号，高帧率刷新利用视觉暂留
 always @ (posedge clk_500HZ or posedge rst)
     if(rst) 
         seg_cs <= 4'b0001;
     else
         seg_cs <= {seg_cs[2:0], seg_cs[3]};
-        
+
+   
+//根据seg_cs信号确定要显示的数字
 reg [3:0] dis_data;
 always @(seg_cs)
     case(seg_cs)
@@ -66,7 +79,8 @@ always @(seg_cs)
     4'b1000:dis_data = data[15:12];
     default:dis_data = 4'hf;
     endcase
-    
+
+//BCD转换，生成段码
 always @(dis_data)
 case(dis_data)
     04'h0:seg_data = 8'h3F;
