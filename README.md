@@ -19,3 +19,4 @@ Add Float_Led project with reset function.
 
 2021.5.28
 Add UART_send project which can only send message to PC.
+Key named S2 serves as the beginning key to send message.
