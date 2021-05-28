@@ -16,3 +16,6 @@ Add seg_com_anode code which designes a timer with xilinx.
 
 2021.4.28
 Add Float_Led project with reset function.
+
+2021.5.28
+Add UART_send project which can only send message to PC.
