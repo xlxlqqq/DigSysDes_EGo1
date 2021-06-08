@@ -19,4 +19,7 @@ Add Float_Led project with reset function.
 
 2021.5.28
 Add UART_send project which can only send message to PC.
-Key named S2 serves as the beginning key to send message.
+The key named S2 serves as the beginning key to send message.
+
+2021.6.8
+Add ADC project which is used on EGo1.
